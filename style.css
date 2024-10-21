@@ -1,0 +1,210 @@
+/* General reset and font styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Ensure the video container covers the entire viewport */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Center the content inside the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Hero text styling */
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin: 10px 0;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    color: #555;
+}
+
+.typing-effect {
+    color: #00aaff;
+    font-weight: bold;
+}
+
+/* Button group styling */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #00aaff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn.active {
+    background-color: #004466;
+}
+
+.btn:hover {
+    background-color: #0088cc;
+}
+
+/* Social accounts styling */
+.social-accounts {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-accounts a img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-accounts a:hover img {
+    transform: scale(1.2);
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+    display: none; /* Hidden by default for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Responsive hamburger menu for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation links by default on small screens */
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for nav */
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on small screens */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .bar {
+        background-color: #fff;
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.footer-content ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-content ul li a img {
+    width: 25px;
+    height: 25px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+}
