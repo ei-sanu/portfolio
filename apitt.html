@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Tours 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cricket Tours and Series - 2025</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tour Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>ODI Matches</th>
+                <th>T20 Matches</th>
+                <th>Test Matches</th>
+                <th>Total Matches</th>
+            </tr>
+        </thead>
+        <tbody id="tour-data">
+            <!-- Data will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchTours() {
+            try {
+                const response = await fetch('tours.json'); // Adjust path if necessary
+                const tours = await response.json();
+                const tableBody = document.getElementById('tour-data');
+
+                tours.forEach(tour => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${tour.tourName}</td>
+                        <td>${tour.startDate}</td>
+                        <td>${tour.endDate}</td>
+                        <td>${tour.odiMatches}</td>
+                        <td>${tour.t20Matches}</td>
+                        <td>${tour.testMatches}</td>
+                        <td>${tour.totalMatches}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Failed to fetch tour data:", error);
+            }
+        }
+
+        // Fetch and display data on page load
+        fetchTours();
+    </script>
+
+</body>
+</html>

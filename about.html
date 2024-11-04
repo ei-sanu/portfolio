@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Somesh Ranjan Biswal">
+    <title>About Me - Somesh Ranjan Biswal</title>
+    <link rel="icon" type="image/png" href="Sanu.jpg">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div id="loader-container" class="loader-container">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="sanu_website.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </div>
+
+        <div class="container">
+            <div class="about-content">
+                <img src="sanu11.jpg" alt="Somesh Ranjan Biswal" class="about-image">
+                <div class="about-text">
+                    <h2>Somesh Ranjan Biswal</h2>
+                    <p>
+                        Hello! I'm Somesh Ranjan Biswal, a passionate Full Stack Developer and technology enthusiast from Odisha, India. I'm currently pursuing a BTech in Computer Science and Engineering, with a deep interest in web development, Python programming, and environmental projects. Over the years, I've worked on numerous projects, from creating educational content for young minds to innovative solutions in waste management. I'm also an esports player who has represented my city and state at national-level tournaments. When I'm not coding or gaming, I enjoy exploring new tech trends and finding ways to combine innovation with practical solutions.
+
+In addition to my technical skills, I am dedicated to promoting sustainability and responsible use of natural resources through my projects. I actively participate in community initiatives aimed at raising awareness about environmental issues. I believe in the power of technology to create a positive impact on society, and I strive to integrate this belief into my work. I enjoy collaborating with like-minded individuals and teams, as I believe that collective efforts can lead to greater innovations. My goal is to continue developing my skills while making meaningful contributions to both technology and the environment.
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div></li>
+                    <li>CSS <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></li>
+                    <li>JavaScript <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div></li>
+                    <li>Python <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></li>
+                    <li>SQL <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></li>
+                    <li>React <div class="progress"><div class="progress-bar" style="width: 60%;">60%</div></div></li>
+                </ul>
+            </div>
+
+            <div class="interests">
+                <h2>Interests</h2>
+                <div class="interest-cards">
+                    <div class="interest-card">
+                        <p>Gaming & Esports</p>
+                    </div>
+                    <div class="interest-card">
+                        <p>Innovative Problem Solving</p>
+                    </div>
+                    <div class="interest-card">
+                        <p>Environmental Safety and Sustainability</p>
+                    </div>
+                    <div class="interest-card">
+                        <p>Creating Educational Content</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        <div class="footer">
+            <p>&copy; 2024 Somesh Ranjan Biswal. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            // Loader
+            setTimeout(() => {
+                document.getElementById('loader-container').classList.add('hidden');
+            }, 1500);
+
+            // Mobile Menu
+            const hamburger = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-btn');
+
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
