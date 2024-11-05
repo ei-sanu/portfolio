@@ -1,0 +1,56 @@
+[
+    {
+        "tourName": "England tour of Ireland, 2025",
+        "startDate": "2025-09-17",
+        "endDate": "Sep 21",
+        "odiMatches": 3,
+        "t20Matches": 0,
+        "testMatches": 0,
+        "totalMatches": 3
+    },
+    {
+        "tourName": "South Africa tour of England, 2025",
+        "startDate": "2025-09-02",
+        "endDate": "Sep 14",
+        "odiMatches": 3,
+        "t20Matches": 3,
+        "testMatches": 0,
+        "totalMatches": 6
+    },
+    {
+        "tourName": "India Women tour of England, 2025",
+        "startDate": "2025-06-28",
+        "endDate": "Jul 22",
+        "odiMatches": 3,
+        "t20Matches": 5,
+        "testMatches": 0,
+        "totalMatches": 8
+    },
+    {
+        "tourName": "India tour of England, 2025",
+        "startDate": "2025-06-20",
+        "endDate": "Aug 04",
+        "odiMatches": 0,
+        "t20Matches": 0,
+        "testMatches": 5,
+        "totalMatches": 5
+    },
+    {
+        "tourName": "ICC World Test Championship Final 2025",
+        "startDate": "2025-06-11",
+        "endDate": "Jun 15",
+        "odiMatches": 0,
+        "t20Matches": 0,
+        "testMatches": 1,
+        "totalMatches": 1
+    },
+    {
+        "tourName": "West Indies tour of England, 2025",
+        "startDate": "2025-05-29",
+        "endDate": "Jun 10",
+        "odiMatches": 3,
+        "t20Matches": 3,
+        "testMatches": 0,
+        "totalMatches": 6
+    }
+]

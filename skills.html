@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skills of Somesh Ranjan Biswal">
+    <title>Skills - Somesh Ranjan Biswal</title>
+    <link rel="icon" type="image/png" href="Sanu.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="skills.css"
+</head>
+<body>
+    <div id="loader-container" class="loader-container">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </div>
+
+    <div class="skills-header">
+        <h1>My Skills</h1>
+    </div>
+
+    <div class="container">
+        <div class="skills-content">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+               <a href="full.html"> <h2>Full Stack Development</h2></a>
+                <p>Expertise in building responsive, dynamic web applications using HTML, CSS, JavaScript, and backend technologies.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+             <a href="pyton.html">  <h2>Python Programming</h2></a>
+                <p>Skilled in writing efficient code, building projects, and solving complex problems with Python.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+               <a href="database.html"> <h2>Database Management</h2></a>
+                <p>Proficient in SQL, database design, and optimizing data retrieval for scalable applications.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt"></i>
+                <a href="responsive.html"> <h2>Responsive Web Design</h2></a>
+                <p>Creating interactive, responsive designs that look stunning on all devices, from desktops to smartphones.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-gamepad"></i>
+                <a href="esports.html"> <h2>E-sports and Gamaing</h2></a>
+                <p>National-level esports player with a strategic mindset and excellent teamwork skills in gaming tournaments.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-recycle"></i>
+                <a href="environment.html"> <h2>Environmental projects</h2></a>
+                <p>Passionate about sustainability, with experience working on projects related to waste management and recycling.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Somesh Ranjan Biswal. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Loader
+            setTimeout(() => {
+                document.getElementById('loader-container').classList.add('hidden');
+            }, 1500);
+
+            // Mobile Menu
+            const hamburger = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-btn');
+
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+<style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+    /* background-image: url("contact.jpg"); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1f1f21;
+  color: wheat;
+}
+loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+  
+  /* Hide the loader by default when not loading */
+  .loader-container.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+  }
+  
+  .circle:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .circle:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    to {
+      transform: translateY(-20px);
+      background-color: #4ecdc4;
+    }
+  }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 10;
+    background-color: transparent;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.hamburger {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 2000px;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: #2c3e50;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    padding: 15px 25px;
+}
+
+.mobile-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+    color: #3498db;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: wheat;
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Hide the botcheck field */
+.hidden {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+  <div id="loader-container" class="loader-container">
+    <div class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>  
+  </div>
+<div class="content">
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li><a href="sanu_website.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </div>
+    
+  <div class="contact-form-container">
+   <center> <h2>Contact Us</h2></center>
+    <form action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="9c4dbdf0-8c38-47a5-aab1-9e3b06b196db">
+    
+        <!-- Form Inputs. Each input must have a name="" attribute -->
+        <input type="text" name="name" required placeholder="Name">
+        <input type="email" name="email" required placeholder="E-mail">
+        <textarea name="message" required placeholder="Message"></textarea>
+    
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <button type="submit">Submit Form</button>
+    </form>
+  </div>
+  <script>
+    // Show loader on page load
+window.addEventListener('load', function () {
+    const loader = document.getElementById('loader-container');
+    loader.classList.add('hidden'); // Hide loader once the page is fully loaded
+  });
+  
+  // Show loader when navigating through the navbar
+  const links = document.querySelectorAll('nav ul li a');
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const loader = document.getElementById('loader-container');
+      loader.classList.remove('hidden'); // Show loader when clicking a link
+    });
+  });
+  const hamburger = document.getElementById('hamburger-btn');
+ const mobileMenu = document.getElementById('mobile-menu');
+ const closeBtn = document.getElementById('close-btn');
+
+ hamburger.addEventListener('click', () => {
+     mobileMenu.classList.add('active');
+ });
+
+ closeBtn.addEventListener('click', () => {
+     mobileMenu.classList.remove('active');
+ });
+
+ // Close menu when clicking outside
+ document.addEventListener('click', (e) => {
+     if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+         mobileMenu.classList.remove('active');
+     }
+ });
+
+  </script>
+</body>
+</html>
